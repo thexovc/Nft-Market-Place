@@ -18,6 +18,11 @@ contract NFTMarket is ReentrancyGuard {
         owner = payable(msg.sender);
     }
 
+    struct Bid {
+     address bidder;
+     uint256 amount;   
+    }
+
     struct MarketItem {
         uint256 itemId;
         address nftContract;
@@ -25,10 +30,19 @@ contract NFTMarket is ReentrancyGuard {
         address payable seller;
         address payable owner;
         uint256 price;
+        uint256 endTime;
         bool sold;
+        Bid highestBid;
+    }
+
+    struct Collection {
+        string name;
+        uint256[] tokenIds;
+        mapping (uint256 => bool) tokens;
     }
 
     mapping (uint256 => MarketItem) private idToMarketItem;
+    mapping (address => Collection[]) private _collections;
 
     event MarketItemCreated (
         uint256 itemId,
@@ -37,17 +51,37 @@ contract NFTMarket is ReentrancyGuard {
         address seller,
         address owner,
         uint256 price,
-        bool sold
+        uint256 endTime,
+        bool sold,
+        Bid highestBid
     );
 
     function getListingPrice() public view returns (uint256){
         return listingPrice;
     }
 
+    function placeBid(uint256 itemId, uint256 bidAmount)  public payable {
+        require(!idToMarketItem[itemId].sold, "Token already sold");
+        require(msg.value == bidAmount, "Sent ETH does not match bid amount");
+    
+        Bid memory currentHighestBid = idToMarketItem[itemId].highestBid;
+        require(bidAmount > currentHighestBid.amount, "Place a higher bid");
+    
+        if (currentHighestBid.bidder != address(0)){
+            payable(currentHighestBid.bidder).transfer(currentHighestBid.amount);
+        }
+
+        idToMarketItem[itemId].highestBid = Bid({
+            bidder: msg.sender,
+            amount: bidAmount
+        });
+    }
+
     function createMarketItem(
         address nftContract,
         uint256 tokenId,
-        uint256 price
+        uint256 price,
+        uint256 duration
     ) public payable nonReentrant {
         require(price > 0, "Price must be at least 1 wei");
         require(msg.value == listingPrice, "Price must be equal to listing price");
@@ -55,15 +89,22 @@ contract NFTMarket is ReentrancyGuard {
         _itemIds.increment();
         uint256 itemId = _itemIds.current();
 
-        idToMarketItem[itemId] = MarketItem(
-            itemId, 
-            nftContract,
-            tokenId,
-            payable(msg.sender),
-            payable(address(0)),
-            price,
-            false
-        );
+        uint256 endTime = block.timestamp + duration;
+
+        idToMarketItem[itemId] = MarketItem({
+            itemId:itemId, 
+            nftContract: nftContract,
+            tokenId: tokenId,
+            seller: payable(msg.sender),
+            owner: payable(address(0)),
+            price: price,
+            endTime: endTime,
+            sold: false, 
+            highestBid: Bid({
+                bidder: address(0),
+                amount: 0
+            })
+    });
 
         IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
     
@@ -74,7 +115,12 @@ contract NFTMarket is ReentrancyGuard {
             msg.sender,
             address(0),
             price,
-            false
+            endTime,
+            false,
+            Bid({
+                bidder: address(0),
+                amount: 0
+            })
         );
    
     }
