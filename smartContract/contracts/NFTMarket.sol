@@ -38,7 +38,6 @@ contract NFTMarket is ReentrancyGuard {
     struct Collection {
         string name;
         uint256[] tokenIds;
-        mapping (uint256 => bool) tokens;
     }
 
     mapping (uint256 => MarketItem) private idToMarketItem;
@@ -143,6 +142,23 @@ contract NFTMarket is ReentrancyGuard {
         payable(owner).transfer(listingPrice);
     }
 
+    // create collection
+    function createCollection(address nftContract,uint256[] memory tokenIds, string memory collectionName) public {
+        for (uint256 i = 0; i < tokenIds.length; i++){
+            require(IERC721(nftContract).ownerOf(tokenIds[i]) == msg.sender, "Only token owner can add the token to collection");
+
+            uint256 collectionIndex = _collections[msg.sender].length;
+            _collections[msg.sender].push(Collection({
+                name: "",
+                tokenIds: new uint256[](0)
+            }));
+
+            _collections[msg.sender][collectionIndex].name = collectionName;
+            _collections[msg.sender][collectionIndex].tokenIds.push(tokenIds[i]);
+           
+        }
+    }
+
     function fetchMarketItems() public view returns (MarketItem[] memory) {
         uint itemCount = _itemIds.current();
         uint unsoldItemCount = _itemIds.current() - _itemsSold.current();
@@ -208,6 +224,14 @@ contract NFTMarket is ReentrancyGuard {
         }
 
         return items;
+    }
+
+    function fetchMyCollections () public view returns (Collection[] memory){
+        return _collections[msg.sender];
+    }
+
+    function fetchCollections(address user) public view returns (Collection[] memory) {
+        return _collections[user];
     }
 
 }
