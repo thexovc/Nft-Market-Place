@@ -59,7 +59,7 @@ contract NFTMarket is ReentrancyGuard {
         return listingPrice;
     }
 
-    function placeBid(uint256 itemId, uint256 bidAmount)  public payable {
+    function placeBid(uint256 itemId, uint256 bidAmount) public payable nonReentrant{
         require(!idToMarketItem[itemId].sold, "Token already sold");
         require(msg.value == bidAmount, "Sent ETH does not match bid amount");
     
