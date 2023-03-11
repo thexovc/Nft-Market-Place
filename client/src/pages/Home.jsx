@@ -72,7 +72,7 @@ const Home = () => {
         {/* card collection */}
         <div className="w-full flex gap-5">
           {/* card start */}
-          <div className="w-2/3 md:w-1/5 rounded-xl flex flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
+          <div className="w-2/3 md:w-1/3 lg:w-1/5 rounded-xl flex flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
             <img src={p3} className="rounded-xl object-center h-52" alt="" />
             <div className="w-full px-5 py-3">
               <h1 className="font-semibold">Moonbird Oddities</h1>
@@ -90,7 +90,7 @@ const Home = () => {
           </div>
           {/* card end */}
           {/* card start */}
-          <div className="w-2/3 md:w-1/5 hidden md:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
+          <div className="w-2/3 md:w-1/3 lg:w-1/5 hidden md:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
             <img src={p2} className="rounded-xl object-center h-52" alt="" />
             <div className="w-full px-5 py-3">
               <h1 className="font-semibold">Moonbird Oddities</h1>
@@ -108,7 +108,7 @@ const Home = () => {
           </div>
           {/* card end */}
           {/* card start */}
-          <div className="w-2/3 md:w-1/5 hidden md:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
+          <div className="w-2/3 md:w-1/3 lg:w-1/5 hidden md:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
             <img src={ghost} className="rounded-xl object-center h-52" alt="" />
             <div className="w-full px-5 py-3">
               <h1 className="font-semibold">Moonbird Oddities</h1>
@@ -126,7 +126,7 @@ const Home = () => {
           </div>
           {/* card end */}
           {/* card start */}
-          <div className="w-2/3 md:w-1/5 hidden md:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
+          <div className="w-2/3 md:w-1/3 lg:w-1/5 hidden lg:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
             <img src={p1} className="rounded-xl object-center h-52" alt="" />
             <div className="w-full px-5 py-3">
               <h1 className="font-semibold">Moonbird Oddities</h1>
@@ -144,7 +144,7 @@ const Home = () => {
           </div>
           {/* card end */}
           {/* card start */}
-          <div className="w-2/3 md:w-1/5 hidden md:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
+          <div className="w-2/3 md:w-1/3 lg:w-1/5 hidden lg:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
             <img src={p4} className="rounded-xl object-center h-52" alt="" />
             <div className="w-full px-5 py-3">
               <h1 className="font-semibold">Moonbird Oddities</h1>
