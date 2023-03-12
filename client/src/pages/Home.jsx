@@ -234,6 +234,11 @@ const Home = () => {
         />
         {/* collection end */}
       </div>
+      <div className="w-full py-2 justify-center flex">
+        <button className="px-5 py-2 font-medium rounded-xl shadow-gray-600 dark:shadow-gray-200 shadow-sm">
+          Show more
+        </button>
+      </div>
       {/* featured end */}
     </div>
   );
