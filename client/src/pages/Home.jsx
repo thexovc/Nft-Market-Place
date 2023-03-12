@@ -1,10 +1,12 @@
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 import ghost from "../assets/apex.jpg";
-import p1 from "../assets/coc.jpg";
-import p2 from "../assets/codm.jpg";
-import p3 from "../assets/ghost.jpg";
-import p4 from "../assets/pubg.jpg";
+import p1 from "../assets/ghost.jpg";
+import p2 from "../assets/pubg.jpg";
+import p3 from "../assets/coc.jpg";
+import p4 from "../assets/codm.jpg";
+import CardColl from "../components/Home/CardColl";
+import Promoted from "../components/Home/Promoted";
 
 const Home = () => {
   const slideLeft = () => {
@@ -57,6 +59,8 @@ const Home = () => {
       </div>
 
       <div className="w-[90%] py-5 md:pt-20 mx-auto flex flex-col gap-5">
+        <h1 className="text-2xl font-medium">Explore</h1>
+
         <div className="w-full md:w-2/5 text-xs md:text-md flex md:justify-between gap-5">
           <a className="bg-blue-100  font-medium dark:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
             All
@@ -92,140 +96,14 @@ const Home = () => {
         />
         <div
           id="slider"
-          className="w-full py-5 mx-auto overflow-x-auto scroll-smooth scrollbar-hide flex flex-row gap-5"
+          className="w-full md:py-5 py-2 mx-auto overflow-x-auto scroll-smooth scrollbar-hide flex flex-row gap-5"
         >
-          {/* card start */}
-          <div className="w-2/3 flex-shrink-0 md:w-1/3 lg:w-1/4 rounded-xl flex flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
-            <img
-              src={p3}
-              className="rounded-xl w-full object-center h-52 md:h-64"
-              alt=""
-            />
-            <div className="w-full px-5 py-3">
-              <h1 className="font-semibold">Moonbird Oddities</h1>
-              <div className="w-full py-2 text-sm flex justify-between">
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">FLOOR</p>
-                  <p className="text-md font-medium">0.15 ETH</p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">TOTAL VOLUME</p>
-                  <p className="text-md font-medium">143 ETH</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* card end */}
-          {/* card start */}
-          <div className="w-2/3 flex-shrink-0  md:w-1/3 lg:w-1/4  md:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
-            <img
-              src={p2}
-              className="rounded-xl w-full object-center h-52 md:h-64"
-              alt=""
-            />
-            <div className="w-full px-5 py-3">
-              <h1 className="font-semibold">Moonbird Oddities</h1>
-              <div className="w-full py-2 text-sm flex justify-between">
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">FLOOR</p>
-                  <p className="text-md font-medium">0.15 ETH</p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">TOTAL VOLUME</p>
-                  <p className="text-md font-medium">143 ETH</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* card end */}
-          {/* card start */}
-          <div className="w-2/3 flex-shrink-0  md:w-1/3 lg:w-1/4  md:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
-            <img
-              src={ghost}
-              className="rounded-xl w-full object-center h-52 md:h-64"
-              alt=""
-            />
-            <div className="w-full px-5 py-3">
-              <h1 className="font-semibold">Moonbird Oddities</h1>
-              <div className="w-full py-2 text-sm flex justify-between">
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">FLOOR</p>
-                  <p className="text-md font-medium">0.15 ETH</p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">TOTAL VOLUME</p>
-                  <p className="text-md font-medium">143 ETH</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* card end */}
-          {/* card start */}
-          <div className="w-2/3 flex-shrink-0  md:w-1/3 lg:w-1/4  lg:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
-            <img
-              src={p1}
-              className="rounded-xl w-full object-center h-52 md:h-64"
-              alt=""
-            />
-            <div className="w-full px-5 py-3">
-              <h1 className="font-semibold">Moonbird Oddities</h1>
-              <div className="w-full py-2 text-sm flex justify-between">
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">FLOOR</p>
-                  <p className="text-md font-medium">0.15 ETH</p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">TOTAL VOLUME</p>
-                  <p className="text-md font-medium">143 ETH</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* card end */}
-          {/* card start */}
-          <div className="w-2/3 flex-shrink-0  md:w-1/3 lg:w-1/4 lg:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
-            <img
-              src={p4}
-              className="rounded-xl w-full object-center h-52 md:h-64"
-              alt=""
-            />
-            <div className="w-full px-5 py-3">
-              <h1 className="font-semibold">Moonbird Oddities</h1>
-              <div className="w-full py-2 text-sm flex justify-between">
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">FLOOR</p>
-                  <p className="text-md font-medium">0.15 ETH</p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">TOTAL VOLUME</p>
-                  <p className="text-md font-medium">143 ETH</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* card end */}
-          {/* card start */}
-          <div className="w-2/3 flex-shrink-0  md:w-1/3 lg:w-1/4 lg:flex rounded-xl flex-col shadow-xl cursor-pointer hover:md:-translate-y-[5px]">
-            <img
-              src={p2}
-              className="rounded-xl w-full object-center h-52 md:h-64"
-              alt=""
-            />
-            <div className="w-full px-5 py-3">
-              <h1 className="font-semibold">Moonbird Oddities</h1>
-              <div className="w-full py-2 text-sm flex justify-between">
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">FLOOR</p>
-                  <p className="text-md font-medium">0.15 ETH</p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-gray-400 text-xs">TOTAL VOLUME</p>
-                  <p className="text-md font-medium">143 ETH</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* card end */}
+          <CardColl image={p2} />
+          <CardColl image={ghost} />
+          <CardColl image={p1} />
+          <CardColl image={p3} />
+          <CardColl image={p4} />
+          <CardColl image={p1} />
         </div>
         <MdChevronRight
           onClick={slideRight}
@@ -234,12 +112,43 @@ const Home = () => {
         />
         {/* collection end */}
       </div>
-      <div className="w-full py-2 justify-center flex">
+      <div className="w-full py-4 justify-center flex">
         <button className="px-5 py-2 font-medium rounded-xl shadow-gray-600 dark:shadow-gray-200 shadow-sm">
           Show more
         </button>
       </div>
       {/* featured end */}
+
+      {/* promoted start */}
+      <div className="w-[90%] md:pt-10 mx-auto flex flex-col gap-5">
+        <h1 className="text-2xl font-medium">Promoted Clips</h1>
+      </div>
+      <div className="w-[95%] md:w-full px-3 flex flex-col pt-8 gap-5 mx-auto">
+        <div className="md:w-full w-full mx-auto gap-2 flex items-center">
+          <MdChevronLeft
+            onClick={slideLeft}
+            className="hidden cursor-pointer opacity-50 hover:opacity-100 md:flex"
+            size={45}
+          />
+          <div
+            id="slider"
+            className="w-full md:py-5 py-2 mx-auto overflow-x-auto scroll-smooth scrollbar-hide flex flex-row gap-5"
+          >
+            <Promoted image={p1} />
+            <Promoted image={ghost} />
+            <Promoted image={p2} />
+            <Promoted image={p3} />
+            <Promoted image={p4} />
+          </div>
+          <MdChevronRight
+            onClick={slideRight}
+            className="hidden cursor-pointer opacity-50 hover:opacity-100 md:flex"
+            size={45}
+          />
+          {/* collection end */}
+        </div>
+      </div>
+      {/* promoted end */}
     </div>
   );
 };
