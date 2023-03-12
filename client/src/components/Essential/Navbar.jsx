@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/codm.jpg";
+import logo from "../../assets/codm.jpg";
 import { CgMenuLeft, CgTrending } from "react-icons/cg";
 import { MdWindow } from "react-icons/md";
 import { motion } from "framer-motion";

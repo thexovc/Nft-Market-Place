@@ -1,8 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Essential/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import Footer from "./components/Essential/Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

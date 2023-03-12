@@ -120,10 +120,10 @@ const Home = () => {
       {/* featured end */}
 
       {/* promoted start */}
-      <div className="w-[90%] md:pt-10 mx-auto flex flex-col gap-5">
-        <h1 className="text-2xl font-medium">Promoted Clips</h1>
+      <div className="w-[90%] md:pt-10 pt-5 mx-auto flex flex-col gap-5">
+        <h1 className="text-2xl font-medium">Promoted Creations</h1>
       </div>
-      <div className="w-[95%] md:w-full px-3 flex flex-col pt-8 gap-5 mx-auto">
+      <div className="w-[95%] md:w-full px-3 flex flex-col pt-4 gap-5 mx-auto">
         <div className="md:w-full w-full mx-auto gap-2 flex items-center">
           <MdChevronLeft
             onClick={slideLeft}
