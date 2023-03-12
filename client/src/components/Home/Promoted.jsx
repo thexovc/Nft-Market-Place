@@ -1,4 +1,5 @@
 import { AiFillEye } from "react-icons/ai";
+import { FaEthereum } from "react-icons/fa";
 
 const Promoted = ({ image }) => {
   return (
@@ -18,8 +19,13 @@ const Promoted = ({ image }) => {
         <div className="w-full py-2 text-sm flex flex-col justify-between">
           <div className="flex justify-between">
             <div className="flex flex-col">
-              <p className="text-xl font-medium">0.15 ETH</p>
-              <p className="text-xl font-medium text-gray-500">($33)</p>
+              <p className="md:text-xl text-lg font-medium flex items-center">
+                <FaEthereum />
+                <span>0.15</span>
+              </p>
+              <p className="md:text-xl text-lg mx-auto font-medium text-gray-500">
+                ($33)
+              </p>
             </div>
 
             <div className="flex justify-center items-center">
