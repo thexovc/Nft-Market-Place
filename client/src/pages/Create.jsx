@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RxLapTimer } from "react-icons/rx";
 import { BsFillTagsFill } from "react-icons/bs";
+import Upload from "../components/Create/Upload";
 
 const Create = () => {
   const [fixed, setFixed] = useState(true);
@@ -9,6 +10,8 @@ const Create = () => {
     <div className="md:w-[60%] w-[90%] mx-auto">
       <div className="md:w-1/2 w-full flex flex-col md:gap-5 gap-3">
         <h1 className="font-semibold text-4xl">Create New Item</h1>
+
+        <Upload />
 
         <div className="w-full flex flex-col gap-1">
           <h1 className="text-xl">Put on marketplace</h1>
@@ -44,6 +47,42 @@ const Create = () => {
               <p>auction</p>
             </div>
           </div>
+        </div>
+
+        <div className="w-full flex flex-col gap-3">
+          <h1 className="text-lg font-medium">Price</h1>
+          <div className="flex w-full justify-between border-[0.05rem] border-gray-400 p-3 rounded-xl">
+            <div className="gray-text text-left">
+              <p>Enter price</p>
+            </div>
+            <div className="text-right">
+              <p> ETH</p>
+            </div>
+          </div>
+
+          {/* price */}
+          <div className="flex w-full gap-2 flex-col justify-between border-[0.05rem] border-[#686a6c] p-3 rounded-xl">
+            <div className="flex justify-between">
+              <div className="gray-text text-left">
+                <p>Price</p>
+                <p>Kyit fee ?</p>
+              </div>
+              <div className="text-right">
+                <p>--- ETH</p>
+                <p>1%</p>
+              </div>
+            </div>
+            <hr className="dark-text" />
+            <div className="flex w-full justify-between">
+              <div className="gray-text text-left">
+                <p>Enter price</p>
+              </div>
+              <div className="text-right">
+                <p> ETH</p>
+              </div>
+            </div>
+          </div>
+          {/* price */}
         </div>
       </div>
     </div>
