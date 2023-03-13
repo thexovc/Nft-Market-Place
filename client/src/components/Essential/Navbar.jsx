@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { CgMenuLeft, CgTrending } from "react-icons/cg";
+import { FiShoppingBag } from "react-icons/fi";
 import { MdWindow } from "react-icons/md";
 import { motion } from "framer-motion";
 
@@ -21,12 +22,20 @@ const Navbar = () => {
        dark:divide-gray-400 dark:border-gray-400
        fixed top-0 z-10 bg-[#F7FBFA] dark:bg-[#202025]"
       >
-        <div className="w-1/2 justify-start flex items-center ">
-          <img className="h-8 w-auto" src={logo} alt="Logo" />
-          <span className="font-medium text-xl tracking-tight ml-2">KYIT</span>
+        <div className="w-1/2 justify-start flex items-center">
+          <Link to={"/"} className="flex">
+            <img className="h-8 w-auto" src={logo} alt="Logo" />
+            <span className="font-medium text-xl tracking-tight ml-2">
+              KYIT
+            </span>
+          </Link>
         </div>
 
-        <div className="w-1/2 md:hidden flex items-center justify-end  text-sm uppercase font-medium gap-10">
+        <div className="w-1/2 md:hidden flex items-center justify-end  text-sm uppercase font-medium gap-5">
+          <div className="flex">
+            <FiShoppingBag size={25} />
+            <p className="-ml-1 -mt-2 text-red-500 font-bold">1</p>
+          </div>
           <CgMenuLeft
             onClick={handleToggle}
             className="text-2xl cursor-pointer"
@@ -43,7 +52,10 @@ const Navbar = () => {
           >
             Connect Wallet
           </a>
-          <a>menu</a>
+          <div className="flex">
+            <FiShoppingBag size={30} />
+            <p className="-ml-1 -mt-2 text-red-500 font-bold">1</p>
+          </div>
         </div>
       </nav>
 

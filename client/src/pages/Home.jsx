@@ -12,18 +12,27 @@ import Promoted from "../components/Home/Promoted";
 import Instruction from "../components/Home/Instruction";
 
 const Home = () => {
-  const slideLeft = () => {
-    let slider = document.getElementById("slider");
+  const slideLeft1 = () => {
+    let slider = document.getElementById("slider1");
     slider.scrollLeft = slider.scrollLeft - 500;
   };
 
-  const slideRight = () => {
-    let slider = document.getElementById("slider");
+  const slideRight1 = () => {
+    let slider = document.getElementById("slider1");
+    slider.scrollLeft = slider.scrollLeft + 500;
+  };
+  const slideLeft2 = () => {
+    let slider = document.getElementById("slider2");
+    slider.scrollLeft = slider.scrollLeft - 500;
+  };
+
+  const slideRight2 = () => {
+    let slider = document.getElementById("slider2");
     slider.scrollLeft = slider.scrollLeft + 500;
   };
 
   return (
-    <div className="w-full pt-28 pb-10 md:pt-32 md:px-5  bg-[#F7FBFA] dark:bg-[#202025]">
+    <div className="w-full md:px-5  bg-[#F7FBFA] dark:bg-[#202025]">
       <div className=" w-[90%] mx-auto flex md:flex-row-reverse flex-col">
         <div className="md:w-1/2 w-full md:px-10 px-2">
           <img
@@ -93,12 +102,12 @@ const Home = () => {
       <div className="md:w-[97%] w-[95%] mx-auto px-3 gap-2 flex items-center">
         {/* collection start */}
         <MdChevronLeft
-          onClick={slideLeft}
+          onClick={slideLeft1}
           className="hidden cursor-pointer opacity-50 hover:opacity-100 md:flex"
           size={45}
         />
         <div
-          id="slider"
+          id="slider1"
           className="w-full md:py-5 py-2 mx-auto overflow-x-auto scroll-smooth scrollbar-hide flex flex-row gap-5"
         >
           <CardColl image={p5} />
@@ -109,7 +118,7 @@ const Home = () => {
           <CardColl image={p1} />
         </div>
         <MdChevronRight
-          onClick={slideRight}
+          onClick={slideRight1}
           className="hidden cursor-pointer opacity-50 hover:opacity-100 md:flex"
           size={45}
         />
@@ -129,12 +138,12 @@ const Home = () => {
       <div className="w-[95%] md:w-[97%] px-3 flex flex-col pt-4 gap-5 mx-auto">
         <div className="md:w-full w-full mx-auto gap-2 flex items-center">
           <MdChevronLeft
-            onClick={slideLeft}
+            onClick={slideLeft2}
             className="hidden cursor-pointer opacity-50 hover:opacity-100 md:flex"
             size={45}
           />
           <div
-            id="slider"
+            id="slider2"
             className="w-full md:py-5 py-2 mx-auto overflow-x-auto scroll-smooth scrollbar-hide flex flex-row gap-5"
           >
             <Promoted image={p1} />
@@ -144,7 +153,7 @@ const Home = () => {
             <Promoted image={p4} />
           </div>
           <MdChevronRight
-            onClick={slideRight}
+            onClick={slideRight2}
             className="hidden cursor-pointer opacity-50 hover:opacity-100 md:flex"
             size={45}
           />
