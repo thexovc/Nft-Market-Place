@@ -8,8 +8,8 @@ const Create = () => {
   const [fixed, setFixed] = useState(true);
 
   return (
-    <div className="md:w-[60%] w-[90%] mx-auto">
-      <div className="md:w-1/2 w-full flex flex-col md:gap-5 gap-3">
+    <div className="md:w-[60%] w-[90%] mx-auto mb-10">
+      <div className="md:w-2/3 mx-auto w-full flex flex-col md:gap-5 gap-3">
         <h1 className="font-semibold text-4xl">Create New Item</h1>
 
         <Upload />
@@ -50,12 +50,15 @@ const Create = () => {
           </div>
         </div>
 
-        <div className="w-full flex flex-col gap-3">
+        <div className="w-full flex flex-col gap-2">
           <h1 className="text-lg font-medium">Price</h1>
-          <div className="flex w-full justify-between border-[0.05rem] border-gray-400 p-3 rounded-xl">
-            <div className="gray-text text-left">
-              <p>Enter price</p>
-            </div>
+          <div className="flex w-full gap-2 justify-between border-[0.05rem] items-center  border-gray-400 p-2 rounded-xl">
+            <input
+              className="h-full w-full p-2 bg-transparent focus:outline-none"
+              type="number"
+              min={0}
+              placeholder="Enter price"
+            />
             <div className="text-right">
               <p> ETH</p>
             </div>
@@ -88,6 +91,36 @@ const Create = () => {
           {/* collection */}
           <Collection />
           {/* collection */}
+
+          <h1 className="text-md font-medium">Name</h1>
+          <div className="flex w-full gap-2 justify-between border-[0.05rem] items-center  border-gray-400 p-2 rounded-xl">
+            <input
+              className="h-full w-full p-2 bg-transparent focus:outline-none"
+              type="text"
+              placeholder="e.g. Redeemable Pass"
+            />
+          </div>
+
+          <h1 className="text-md font-medium">
+            Description <span className="gray-text">(optional)</span>
+          </h1>
+          <div className="flex w-full gap-2 justify-between border-[0.05rem] items-center  border-gray-400 p-2 rounded-xl">
+            <input
+              className="h-full w-full p-2 bg-transparent focus:outline-none"
+              type="text"
+              placeholder="e.g. After purchasing you'll be able to redeem your pass"
+            />
+          </div>
+
+          {/* button */}
+          <button
+            className="w-[30%] mt-2 border-[#202025] dark:border-[#F7FBFA] border-[0.125rem] 
+               px-5 py-3 rounded-2xl hover:bg-[#202025] hover:text-[#F7FBFA] 
+              dark:hover:bg-[#F7FBFA] dark:hover:text-[#202025] cursor-pointer"
+          >
+            Create
+          </button>
+          {/* button */}
         </div>
       </div>
     </div>
