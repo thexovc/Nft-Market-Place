@@ -2,6 +2,7 @@ import { useState } from "react";
 import { RxLapTimer } from "react-icons/rx";
 import { BsFillTagsFill } from "react-icons/bs";
 import Upload from "../components/Create/Upload";
+import Collection from "../components/Create/Collection";
 
 const Create = () => {
   const [fixed, setFixed] = useState(true);
@@ -20,7 +21,7 @@ const Create = () => {
               ? "Enter price to allow users instantly purchase your NFT"
               : "Set a period of time for which buyers can place bids"}
           </p>
-          <div className="flex w-full mt-2 md:gap-10 gap-5">
+          <div className="flex w-full mt-2  gap-5">
             <div
               onClick={() => setFixed(true)}
               className={`w-1/2 border-[0.15rem] rounded-lg flex flex-col justify-center items-center  ${
@@ -83,6 +84,10 @@ const Create = () => {
             </div>
           </div>
           {/* price */}
+
+          {/* collection */}
+          <Collection />
+          {/* collection */}
         </div>
       </div>
     </div>
