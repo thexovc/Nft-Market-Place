@@ -1,10 +1,12 @@
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
-import ghost from "../assets/apex.jpg";
-import p1 from "../assets/ghost.jpg";
-import p2 from "../assets/pubg.jpg";
-import p3 from "../assets/coc.jpg";
-import p4 from "../assets/codm.jpg";
+import bgImg from "../assets/bgImg.avif";
+import p6 from "../assets/p6.avif";
+import p1 from "../assets/p1.avif";
+import p5 from "../assets/p5.avif";
+import p3 from "../assets/p3.png";
+import p4 from "../assets/p4.avif";
+
 import CardColl from "../components/Home/CardColl";
 import Promoted from "../components/Home/Promoted";
 import Instruction from "../components/Home/Instruction";
@@ -26,7 +28,7 @@ const Home = () => {
         <div className="md:w-1/2 w-full md:px-10 px-2">
           <img
             className="rounded-xl object-center w-full md:w-5/6 mx-auto h-[300px] md:h-[350px]"
-            src={ghost}
+            src={bgImg}
             alt=""
           />
         </div>
@@ -99,8 +101,8 @@ const Home = () => {
           id="slider"
           className="w-full md:py-5 py-2 mx-auto overflow-x-auto scroll-smooth scrollbar-hide flex flex-row gap-5"
         >
-          <CardColl image={p2} />
-          <CardColl image={ghost} />
+          <CardColl image={p5} />
+          <CardColl image={p6} />
           <CardColl image={p1} />
           <CardColl image={p3} />
           <CardColl image={p4} />
@@ -136,9 +138,9 @@ const Home = () => {
             className="w-full md:py-5 py-2 mx-auto overflow-x-auto scroll-smooth scrollbar-hide flex flex-row gap-5"
           >
             <Promoted image={p1} />
-            <Promoted image={ghost} />
-            <Promoted image={p2} />
             <Promoted image={p3} />
+            <Promoted image={p5} />
+            <Promoted image={p6} />
             <Promoted image={p4} />
           </div>
           <MdChevronRight
