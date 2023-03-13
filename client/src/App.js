@@ -16,7 +16,7 @@ function App() {
           <Route path="/create/erc-721" element={<Create />} />
         </Routes>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

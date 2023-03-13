@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { RxLapTimer } from "react-icons/rx";
+import { BsFillTagsFill } from "react-icons/bs";
 
 const Create = () => {
   const [fixed, setFixed] = useState(true);
@@ -15,23 +17,25 @@ const Create = () => {
               ? "Enter price to allow users instantly purchase your NFT"
               : "Set a period of time for which buyers can place bids"}
           </p>
-          <div className="flex w-full mt-2 gap-10">
+          <div className="flex w-full mt-2 md:gap-10 gap-5">
             <div
               onClick={() => setFixed(true)}
               className={`w-1/2 border-[0.15rem] rounded-lg flex flex-col justify-center items-center  ${
                 !fixed ? "border-gray-800" : "border-gray-300"
               } cursor-pointer p-4 text-md font-medium`}
             >
+              <BsFillTagsFill className="mb-2" size={25} />
               <p>Fixed</p>
               <p>price</p>
             </div>
 
             <div
               onClick={() => setFixed(false)}
-              className={`w-1/2 border-[0.15rem] rounded-lg flex flex-col justify-center items-center  ${
+              className={`w-1/2 border-[0.15rem]  rounded-lg flex flex-col justify-center items-center  ${
                 fixed ? "border-gray-800" : "border-gray-300"
               } cursor-pointer p-4 text-md font-medium`}
             >
+              <RxLapTimer className="mb-2" size={25} />
               <p>Timed</p>
               <p>auction</p>
             </div>
