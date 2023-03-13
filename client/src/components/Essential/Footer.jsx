@@ -1,4 +1,4 @@
-import logo from "../../assets/codm.jpg";
+import logo from "../../assets/logo.png";
 
 const Footer = () => {
   return (
