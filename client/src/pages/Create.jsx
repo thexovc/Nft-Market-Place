@@ -21,7 +21,9 @@ const Create = () => {
             <div
               onClick={() => setFixed(true)}
               className={`w-1/2 border-[0.15rem] rounded-lg flex flex-col justify-center items-center  ${
-                !fixed ? "border-gray-800" : "border-gray-300"
+                fixed
+                  ? "border-gray-800 dark:border-gray-300"
+                  : "border-gray-300 dark:border-gray-800"
               } cursor-pointer p-4 text-md font-medium`}
             >
               <BsFillTagsFill className="mb-2" size={25} />
@@ -32,7 +34,9 @@ const Create = () => {
             <div
               onClick={() => setFixed(false)}
               className={`w-1/2 border-[0.15rem]  rounded-lg flex flex-col justify-center items-center  ${
-                fixed ? "border-gray-800" : "border-gray-300"
+                !fixed
+                  ? "border-gray-800 dark:border-gray-300"
+                  : "border-gray-300 dark:border-gray-800"
               } cursor-pointer p-4 text-md font-medium`}
             >
               <RxLapTimer className="mb-2" size={25} />
