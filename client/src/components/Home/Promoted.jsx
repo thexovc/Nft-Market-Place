@@ -3,10 +3,10 @@ import { FaEthereum } from "react-icons/fa";
 
 const Promoted = ({ image }) => {
   return (
-    <div className="w-2/3 flex-shrink-0 md:w-1/3 lg:w-1/4 rounded-xl flex flex-col shadow-sm shadow-gray-400 cursor-pointer hover:md:-translate-y-[5px]">
+    <div className="w-2/3 outline-none flex-shrink-0 md:w-1/3 lg:w-1/4 rounded-xl flex flex-col shadow-sm shadow-gray-400 cursor-pointer hover:md:-translate-y-[5px]">
       <img
         src={image}
-        className="rounded-xl w-full object-center h-52 md:h-72"
+        className="rounded-t-xl w-full object-center h-56 md:h-72"
         alt=""
       />
       <div className="w-full px-5 py-3 h-52 flex flex-col text-xl gap-2 justify-center">

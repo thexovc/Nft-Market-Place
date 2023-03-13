@@ -7,6 +7,7 @@ import p3 from "../assets/coc.jpg";
 import p4 from "../assets/codm.jpg";
 import CardColl from "../components/Home/CardColl";
 import Promoted from "../components/Home/Promoted";
+import Instruction from "../components/Home/Instruction";
 
 const Home = () => {
   const slideLeft = () => {
@@ -20,7 +21,7 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full py-28 md:py-32  bg-[#F7FBFA] dark:bg-[#202025]">
+    <div className="w-full pt-28 pb-10 md:pt-32 md:px-5  bg-[#F7FBFA] dark:bg-[#202025]">
       <div className=" w-[90%] mx-auto flex md:flex-row-reverse flex-col">
         <div className="md:w-1/2 w-full md:px-10 px-2">
           <img
@@ -62,32 +63,32 @@ const Home = () => {
         <h1 className="text-2xl font-medium">Explore</h1>
 
         <div className="w-full md:w-2/5 text-xs md:text-md flex md:justify-between gap-5">
-          <a className="bg-blue-100  font-medium dark:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
+          <a className="bg-blue-100 outline-none  font-medium dark:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
             All
           </a>
-          <a className="hover:bg-blue-100  font-medium dark:hover:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
+          <a className="hover:bg-blue-100 outline-none  font-medium dark:hover:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
             Art
           </a>
-          <a className="hover:bg-blue-100  font-medium dark:hover:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
+          <a className="hover:bg-blue-100 outline-none  font-medium dark:hover:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
             Gaming
           </a>
 
-          <a className="hover:bg-blue-100  font-medium dark:hover:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
+          <a className="hover:bg-blue-100 outline-none  font-medium dark:hover:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
             Photography
           </a>
 
-          <a className="hidden md:block hover:bg-blue-100 font-medium dark:hover:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
+          <a className="hidden md:block hover:bg-blue-100 outline-none font-medium dark:hover:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
             PFPs
           </a>
 
-          <a className="hidden md:block hover:bg-blue-100 font-medium dark:hover:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
+          <a className="hidden md:block hover:bg-blue-100 outline-none font-medium dark:hover:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
             MemberShips
           </a>
         </div>
       </div>
 
       {/* featured collection */}
-      <div className="md:w-full w-[95%] mx-auto px-3 gap-2 flex items-center">
+      <div className="md:w-[97%] w-[95%] mx-auto px-3 gap-2 flex items-center">
         {/* collection start */}
         <MdChevronLeft
           onClick={slideLeft}
@@ -123,7 +124,7 @@ const Home = () => {
       <div className="w-[90%] md:pt-10 pt-5 mx-auto flex flex-col gap-5">
         <h1 className="text-2xl font-medium">Promoted Creations</h1>
       </div>
-      <div className="w-[95%] md:w-full px-3 flex flex-col pt-4 gap-5 mx-auto">
+      <div className="w-[95%] md:w-[97%] px-3 flex flex-col pt-4 gap-5 mx-auto">
         <div className="md:w-full w-full mx-auto gap-2 flex items-center">
           <MdChevronLeft
             onClick={slideLeft}
@@ -149,6 +150,10 @@ const Home = () => {
         </div>
       </div>
       {/* promoted end */}
+
+      {/* instruction */}
+      <Instruction />
+      {/* instruction */}
     </div>
   );
 };
