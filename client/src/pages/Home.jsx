@@ -1,4 +1,5 @@
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 import bgImg from "../assets/bgImg.avif";
 import p6 from "../assets/p6.avif";
@@ -51,13 +52,14 @@ const Home = () => {
           </h1>
 
           <div className="flex gap-3">
-            <button
+            <Link
+              to={"/explore"}
               className="border-[#202025] dark:border-[#F7FBFA] border-[0.125rem] 
                px-5 py-3 rounded-2xl hover:bg-[#202025] hover:text-[#F7FBFA] 
               dark:hover:bg-[#F7FBFA] dark:hover:text-[#202025] cursor-pointer"
             >
               Explore
-            </button>
+            </Link>
 
             <button
               className="border-[#202025] dark:border-[#F7FBFA] border-[0.125rem] 
