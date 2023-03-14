@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+
 import e1 from "../assets/explore/e1.avif";
 import e2 from "../assets/explore/e2.avif";
-import CollectionList from "../components/Explore/collectionList";
 
+import p6 from "../assets/p6.avif";
+import p1 from "../assets/p1.avif";
+import p5 from "../assets/p5.avif";
+import p3 from "../assets/p3.png";
+import p4 from "../assets/p4.avif";
+import CollectionList from "../components/Explore/collectionList";
 import ExploreShowCase from "../components/Explore/exploreShowCase";
 
 const Explore = () => {
@@ -36,7 +42,7 @@ const Explore = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col -mt-5">
       {/* collection start */}
       <div className="w-full mx-auto">
         <div className="w-[98%] mx-auto px-3 gap-2 flex items-center">
@@ -49,12 +55,12 @@ const Explore = () => {
             id="slider1"
             className="w-full md:py-5 py-2 mx-auto overflow-x-auto scroll-smooth scrollbar-hide flex flex-row gap-5"
           >
-            <ExploreShowCase image={e1} pic={e2} />
             <ExploreShowCase image={e2} pic={e1} />
             <ExploreShowCase image={e1} pic={e2} />
-            <ExploreShowCase image={e2} pic={e1} />
+            <ExploreShowCase image={p3} pic={e2} />
+            <ExploreShowCase image={p5} pic={e1} />
             <ExploreShowCase image={e1} pic={e2} />
-            <ExploreShowCase image={e2} pic={e1} />
+            <ExploreShowCase image={p4} pic={e1} />
           </div>
           <MdChevronRight
             onClick={slideRight1}
@@ -160,19 +166,35 @@ const Explore = () => {
         <div className="w-full flex flex-col">
           <div className="md:w-1/2 w-full gap-2 flex flex-col">
             <div className="w-full uppercase flex text-sm justify-between gray-text font-medium">
-              <p className="md:w-4/6 cursor-pointer">collection</p>
-              <p className="md:w-1/6 hidden md:flex cursor-pointer">
+              <p className="md:w-4/6 cursor-pointer ml-2 text-xs">collection</p>
+              <p className="md:w-1/6 hidden md:flex cursor-pointer text-xs">
                 floor price
               </p>
-              <p className="md:w-1/6 cursor-pointer">volume</p>
+              <p className="md:w-1/6 cursor-pointer w-2/6 flex justify-end md:justify-start text-xs">
+                volume
+              </p>
             </div>
 
             {/* list */}
-            <div className="w-full flex">
+            <div className="w-full flex flex-col gap-3">
               <CollectionList
                 num={1}
-                image={e2}
-                name="TwelvePepes"
+                image={p1}
+                name="TwelvePepe"
+                price={0.04}
+                volume={375}
+              />
+              <CollectionList
+                num={1}
+                image={p4}
+                name="Seizon"
+                price={0.04}
+                volume={375}
+              />
+              <CollectionList
+                num={1}
+                image={p3}
+                name="variant modifiers to target media queries"
                 price={0.04}
                 volume={375}
               />
