@@ -8,7 +8,7 @@ import p5 from "../assets/p5.avif";
 import p3 from "../assets/p3.png";
 import p4 from "../assets/p4.avif";
 
-import CardColl from "../components/Home/CardColl";
+import CardColl from "../components/Essential/CardColl";
 import Promoted from "../components/Home/Promoted";
 import Instruction from "../components/Home/Instruction";
 

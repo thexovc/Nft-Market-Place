@@ -11,6 +11,7 @@ import p3 from "../assets/p3.png";
 import p4 from "../assets/p4.avif";
 import CollectionList from "../components/Explore/collectionList";
 import ExploreShowCase from "../components/Explore/exploreShowCase";
+import CardColl from "../components/Essential/CardColl";
 
 const Explore = () => {
   const [width, setWidth] = useState(0);
@@ -72,8 +73,6 @@ const Explore = () => {
       {/* collection end */}
 
       <div className="w-[90%] py-5  mx-auto flex flex-col gap-5">
-        <h1 className="text-2xl font-medium">Explore</h1>
-
         <div className="w-full md:w-2/5 text-xs md:text-md flex md:justify-between gap-5">
           <a className="bg-blue-100 outline-none  font-medium dark:text-[#202025] cursor-pointer rounded-md md:px-4 px-3 py-1">
             All
@@ -163,7 +162,7 @@ const Explore = () => {
         {/* trending and all */}
 
         {/* collection list */}
-        <div className="w-full flex flex-col">
+        <div className="w-full flex gap-5">
           <div className="md:w-1/2 w-full gap-2 flex flex-col">
             <div className="w-full uppercase flex text-sm justify-between gray-text font-medium">
               <p className="md:w-4/6 cursor-pointer ml-2 text-xs">collection</p>
@@ -185,14 +184,52 @@ const Explore = () => {
                 volume={375}
               />
               <CollectionList
-                num={1}
+                num={2}
                 image={p4}
                 name="Seizon"
                 price={0.04}
                 volume={375}
               />
               <CollectionList
-                num={1}
+                num={3}
+                image={p3}
+                name="variant modifiers to target media queries"
+                price={0.04}
+                volume={375}
+              />
+            </div>
+            {/* list */}
+          </div>
+
+          <div className="md:w-1/2 hidden md:flex w-full gap-2 flex-col">
+            <div className="w-full uppercase flex text-sm justify-between gray-text font-medium">
+              <p className="md:w-4/6 cursor-pointer ml-2 text-xs">collection</p>
+              <p className="md:w-1/6 hidden md:flex cursor-pointer text-xs">
+                floor price
+              </p>
+              <p className="md:w-1/6 cursor-pointer w-2/6 flex justify-end md:justify-start text-xs">
+                volume
+              </p>
+            </div>
+
+            {/* list */}
+            <div className="w-full flex flex-col gap-3">
+              <CollectionList
+                num={4}
+                image={p1}
+                name="TwelvePepe"
+                price={0.04}
+                volume={375}
+              />
+              <CollectionList
+                num={5}
+                image={p4}
+                name="Seizon"
+                price={0.04}
+                volume={375}
+              />
+              <CollectionList
+                num={6}
                 image={p3}
                 name="variant modifiers to target media queries"
                 price={0.04}
@@ -203,6 +240,68 @@ const Explore = () => {
           </div>
         </div>
         {/* collection list */}
+
+        {/* spotlight */}
+        <div className="w-full md:pt-10 pt-5 mx-auto flex flex-col gap-5">
+          <h1 className="text-2xl font-medium">Art Spotlight</h1>
+        </div>
+        <div className="w-full mx-auto gap-2 flex items-center">
+          {/* collection start */}
+          <MdChevronLeft
+            onClick={slideLeft1}
+            className="hidden cursor-pointer -ml-10 opacity-50 hover:opacity-100 md:flex"
+            size={45}
+          />
+          <div
+            id="slider1"
+            className="w-full md:py-5 py-2 mx-auto overflow-x-auto scroll-smooth scrollbar-hide flex flex-row gap-5"
+          >
+            <CardColl image={p5} />
+            <CardColl image={p6} />
+            <CardColl image={p1} />
+            <CardColl image={p3} />
+            <CardColl image={p4} />
+            <CardColl image={p1} />
+          </div>
+          <MdChevronRight
+            onClick={slideRight1}
+            className="hidden cursor-pointer -mr-10 opacity-50 hover:opacity-100 md:flex"
+            size={45}
+          />
+          {/* collection end */}
+        </div>
+        {/* spotlight */}
+
+        {/* Trending */}
+        <div className="w-full md:pt-10 pt-5 mx-auto flex flex-col gap-5">
+          <h1 className="text-2xl font-medium">Trending in Art</h1>
+        </div>
+        <div className="w-full mx-auto gap-2 flex items-center">
+          {/* collection start */}
+          <MdChevronLeft
+            onClick={slideLeft1}
+            className="hidden cursor-pointer -ml-10 opacity-50 hover:opacity-100 md:flex"
+            size={45}
+          />
+          <div
+            id="slider1"
+            className="w-full md:py-5 py-2 mx-auto overflow-x-auto scroll-smooth scrollbar-hide flex flex-row gap-5"
+          >
+            <CardColl image={p5} />
+            <CardColl image={p6} />
+            <CardColl image={p1} />
+            <CardColl image={p3} />
+            <CardColl image={p4} />
+            <CardColl image={p1} />
+          </div>
+          <MdChevronRight
+            onClick={slideRight1}
+            className="hidden cursor-pointer -mr-10 opacity-50 hover:opacity-100 md:flex"
+            size={45}
+          />
+          {/* collection end */}
+        </div>
+        {/* Trending */}
       </div>
     </div>
   );
