@@ -62,13 +62,13 @@ const Navbar = () => {
       {toggle && (
         <div className="w-screen backdrop-blur-[8px] md:hidden fixed top-0 z-50 h-screen text-[#f2f3f4] dark:text-[#202025] flex flex-col">
           <div
-            className="h-2/5 backdrop-blur-[8px] "
+            className="h-2/5 backdrop-blur-[8px] top-0"
             onClick={handleToggle}
           ></div>
 
           {/* nav */}
           <motion.div
-            whileInView={{ y: [0, -40, -10, 0], opacity: [0, 1] }}
+            whileInView={{ y: [0, -30, 0], opacity: [0, 1] }}
             transition={{ duration: 0.7 }}
             className="h-3/5 backdrop-blur-[8px]"
           >
@@ -78,7 +78,7 @@ const Navbar = () => {
             >
               <div className="flex items-center gap-2 cursor-pointer hover:bg-gray-800 dark:hover:bg-gray-200 p-2 rounded-lg">
                 <CgTrending className="font-bold text-2xl" />
-                <a>Feeds</a>
+                <Link to={"/explore"}>Explore</Link>
               </div>
 
               <div className="flex items-center gap-2 cursor-pointer hover:bg-gray-800 dark:hover:bg-gray-200 p-2 rounded-lg">
