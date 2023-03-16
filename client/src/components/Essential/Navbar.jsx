@@ -6,12 +6,17 @@ import { MdWindow } from "react-icons/md";
 import { motion } from "framer-motion";
 
 import { useState } from "react";
+import Cart from "./Cart";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [cart, setCart] = useState(false);
 
   const handleToggle = () => {
     setToggle(!toggle);
+  };
+  const handleCart = () => {
+    setCart(!cart);
   };
 
   return (
@@ -33,7 +38,11 @@ const Navbar = () => {
 
         <div className="w-1/2 md:hidden flex items-center justify-end  text-sm uppercase font-medium gap-5">
           <div className="flex">
-            <FiShoppingBag size={25} />
+            <FiShoppingBag
+              size={25}
+              onClick={handleCart}
+              className="cursor-pointer"
+            />
             <p className="-ml-1 -mt-2 text-red-500 font-bold">1</p>
           </div>
           <CgMenuLeft
@@ -53,12 +62,16 @@ const Navbar = () => {
             Connect Wallet
           </a>
           <div className="flex">
-            <FiShoppingBag size={30} />
+            <FiShoppingBag
+              onClick={handleCart}
+              className="cursor-pointer"
+              size={30}
+            />
             <p className="-ml-1 -mt-2 text-red-500 font-bold">1</p>
           </div>
         </div>
       </nav>
-
+      {cart && <Cart />}
       {toggle && (
         <div className="w-screen backdrop-blur-[8px] md:hidden fixed top-0 z-50 h-screen text-[#f2f3f4] dark:text-[#202025] flex flex-col">
           <div
@@ -78,7 +91,7 @@ const Navbar = () => {
             >
               <div className="flex items-center gap-2 cursor-pointer hover:bg-gray-800 dark:hover:bg-gray-200 p-2 rounded-lg">
                 <CgTrending className="font-bold text-2xl" />
-                <Link to={"/explore"}>Explore</Link>
+                <Link>Explore</Link>
               </div>
 
               <div className="flex items-center gap-2 cursor-pointer hover:bg-gray-800 dark:hover:bg-gray-200 p-2 rounded-lg">
